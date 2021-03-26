@@ -3,7 +3,7 @@ module TD::Types
   #
   # @attr username [String, nil] Username for logging in; may be empty.
   # @attr password [String, nil] Password for logging in; may be empty.
-  # @attr http_only [Boolean] Pass true, if the proxy supports only HTTP requests and doesn't support transparent TCP
+  # @attr http_only [Boolean] Pass true if the proxy supports only HTTP requests and doesn't support transparent TCP
   #   connections via HTTP CONNECT method.
   class ProxyType::Http < ProxyType
     attribute :username, TD::Types::String.optional.default(nil)

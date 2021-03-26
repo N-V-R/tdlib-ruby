@@ -1,5 +1,5 @@
 module TD::Types
-  # Represents the current authorization state of the client.
+  # Represents the current authorization state of the TDLib client.
   class AuthorizationState < Base
     %w[
       wait_tdlib_parameters

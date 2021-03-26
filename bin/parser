@@ -221,10 +221,10 @@ module TD::Types
   class Base < Dry::Struct
     # throw an error when unknown keys provided
     schema schema.strict
-    
+
     # convert string keys to symbols
     transform_keys(&:to_sym)
-    
+
     # resolve default types on nil
     transform_types do |type|
       if type.default?
@@ -235,12 +235,12 @@ module TD::Types
         type
       end
     end
-    
+
     def to_hash
       { '@type' => LOOKUP_TABLE.key(self.class.name.sub('TD::Types::', '')) }.merge(super)
     end
     alias_method :to_h, :to_hash
-    
+
     def to_json(*args)
       to_hash.to_json(*args)
     end
@@ -342,14 +342,14 @@ require 'dry-struct'
 require 'dry-types'
 
 module TD::Types
-  include Dry::Types.module
-  
+  include Dry.Types(default: :nominal)
+
   LOOKUP_TABLE = {
       #{lookup_table.join(",\n      ")}
   }.freeze
-  
+
   module_function
-  
+
   # Recursively wraps a hash into typed classes
   def wrap(object)
     # Wrapping each entry in array
@@ -357,32 +357,32 @@ module TD::Types
       object.map { |o| wrap(o) }
     elsif object.kind_of?(::Hash)
       type = object.delete('@type')
-      
+
       object.each do |key, val|
         if val.respond_to?(:each)
           object[key] = wrap(val)
         end
       end
-      
+
       unless type
         return object
       end
-      
+
       if (klass = LOOKUP_TABLE[type])
         const_get(klass).new(object)
       else
         raise ArgumentError.new("Can't find class for \#{type}")
       end
-    else 
+    else
       object
     end
   end
-  
+
   # Simple implementation for internal use only.
   def camelize(str)
     str.gsub(/(?:_|(\\/)|^)([a-z\\d]*)/i) { "\#{$1}\#{$2.capitalize}" }
   end
-  
+
   %w[
     #{(@class_hierarchy["Base"].map { |c| c.underscore } + ['base']).sort_by { |c| c }.join("\n    ")}
   ].each do |type|

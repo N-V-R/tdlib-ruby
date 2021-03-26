@@ -3,7 +3,7 @@ module TD::Types
   #
   # @attr background [TD::Types::InputFile] Background file to use.
   #   Only {TD::Types::InputFile::Local} and {TD::Types::InputFile::Generated} are supported.
-  #   The file nust be in JPEG format for wallpapers and in PNG format for patterns.
+  #   The file must be in JPEG format for wallpapers and in PNG format for patterns.
   class InputBackground::Local < InputBackground
     attribute :background, TD::Types::InputFile
   end

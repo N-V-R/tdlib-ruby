@@ -5,7 +5,7 @@ module TD::Types
   # @attr title [String] Venue name; as defined by the sender.
   # @attr address [String] Venue address; as defined by the sender.
   # @attr provider [String] Provider of the venue database; as defined by the sender.
-  #   Currently only "foursquare" needs to be supported.
+  #   Currently only "foursquare" and "gplaces" (Google Places) need to be supported.
   # @attr id [String] Identifier of the venue in the provider database; as defined by the sender.
   # @attr type [String] Type of the venue in the provider database; as defined by the sender.
   class Venue < Base

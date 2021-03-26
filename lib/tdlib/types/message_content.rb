@@ -16,10 +16,14 @@ module TD::Types
       location
       venue
       contact
+      dice
       game
       poll
       invoice
       call
+      voice_chat_started
+      voice_chat_ended
+      invite_voice_chat_participants
       basic_group_chat_create
       supergroup_chat_create
       chat_change_title
@@ -41,6 +45,7 @@ module TD::Types
       website_connected
       passport_data_sent
       passport_data_received
+      proximity_alert_triggered
       unsupported
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/message_content/#{type}"

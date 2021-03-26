@@ -6,13 +6,13 @@ module TD::Types
   # @attr hide_url [Boolean] True, if the URL must be not shown.
   # @attr title [String] Title of the result.
   # @attr description [String] A short description of the result.
-  # @attr thumbnail [TD::Types::PhotoSize, nil] Result thumbnail; may be null.
+  # @attr thumbnail [TD::Types::Thumbnail, nil] Result thumbnail in JPEG format; may be null.
   class InlineQueryResult::Article < InlineQueryResult
     attribute :id, TD::Types::String
     attribute :url, TD::Types::String
     attribute :hide_url, TD::Types::Bool
     attribute :title, TD::Types::String
     attribute :description, TD::Types::String
-    attribute :thumbnail, TD::Types::PhotoSize.optional.default(nil)
+    attribute :thumbnail, TD::Types::Thumbnail.optional.default(nil)
   end
 end

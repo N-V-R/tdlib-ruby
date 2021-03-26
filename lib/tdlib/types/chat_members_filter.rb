@@ -5,6 +5,7 @@ module TD::Types
       contacts
       administrators
       members
+      mention
       restricted
       banned
       bots

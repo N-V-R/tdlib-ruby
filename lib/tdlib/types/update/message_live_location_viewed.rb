@@ -1,6 +1,6 @@
 module TD::Types
   # A message with a live location was viewed.
-  # When the update is received, the client is supposed to update the live location.
+  # When the update is received, the application is supposed to update the live location.
   #
   # @attr chat_id [Integer] Identifier of the chat with the live location message.
   # @attr message_id [Integer] Identifier of the message with live location.

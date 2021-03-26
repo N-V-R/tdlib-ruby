@@ -1,12 +1,16 @@
 module TD::Types
-  # Describes the photo of a chat.
+  # Describes a chat or user profile photo.
   #
-  # @attr small [TD::Types::File] A small (160x160) chat photo.
-  #   The file can be downloaded only before the photo is changed.
-  # @attr big [TD::Types::File] A big (640x640) chat photo.
-  #   The file can be downloaded only before the photo is changed.
+  # @attr id [Integer] Unique photo identifier.
+  # @attr added_date [Integer] Point in time (Unix timestamp) when the photo has been added.
+  # @attr minithumbnail [TD::Types::Minithumbnail, nil] Photo minithumbnail; may be null.
+  # @attr sizes [Array<TD::Types::PhotoSize>] Available variants of the photo in JPEG format, in different size.
+  # @attr animation [TD::Types::AnimatedChatPhoto, nil] Animated variant of the photo in MPEG4 format; may be null.
   class ChatPhoto < Base
-    attribute :small, TD::Types::File
-    attribute :big, TD::Types::File
+    attribute :id, TD::Types::Integer
+    attribute :added_date, TD::Types::Integer
+    attribute :minithumbnail, TD::Types::Minithumbnail.optional.default(nil)
+    attribute :sizes, TD::Types::Array.of(TD::Types::PhotoSize)
+    attribute :animation, TD::Types::AnimatedChatPhoto.optional.default(nil)
   end
 end

@@ -4,6 +4,7 @@ module TD::Types
     %w[
       report_spam
       report_unrelated_location
+      invite_members
       report_add_block
       add_contact
       share_phone_number

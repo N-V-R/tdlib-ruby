@@ -5,10 +5,10 @@ module TD::Types
   #
   # @attr chat_id [Integer] Chat identifier.
   # @attr draft_message [TD::Types::DraftMessage, nil] The new draft message; may be null.
-  # @attr order [Integer] New value of the chat order.
+  # @attr positions [Array<TD::Types::ChatPosition>] The new chat positions in the chat lists.
   class Update::ChatDraftMessage < Update
     attribute :chat_id, TD::Types::Integer
     attribute :draft_message, TD::Types::DraftMessage.optional.default(nil)
-    attribute :order, TD::Types::Integer
+    attribute :positions, TD::Types::Array.of(TD::Types::ChatPosition)
   end
 end

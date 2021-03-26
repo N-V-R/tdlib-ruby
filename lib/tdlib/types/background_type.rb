@@ -1,5 +1,5 @@
 module TD::Types
-  # Describes a type of a background.
+  # Describes the type of a background.
   class BackgroundType < Base
     %w[
       wallpaper

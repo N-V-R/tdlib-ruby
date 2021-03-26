@@ -1,3 +1,5 @@
+require 'concurrent'
+
 class TD::UpdateHandler
   include Concurrent::Async
 

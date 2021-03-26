@@ -2,8 +2,7 @@ module TD::Types
   # Represents a single result of an inline query; for bots only.
   class InputInlineQueryResult < Base
     %w[
-      animated_gif
-      animated_mpeg4
+      animation
       article
       audio
       contact

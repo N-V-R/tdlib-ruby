@@ -1,7 +1,7 @@
 module TD::Types
   # A photo message.
   #
-  # @attr photo [TD::Types::Photo] Message content.
+  # @attr photo [TD::Types::Photo] The photo description.
   # @attr caption [TD::Types::FormattedText] Photo caption.
   # @attr is_secret [Boolean] True, if the photo must be blurred and must be shown only while tapped.
   class MessageContent::Photo < MessageContent

@@ -1,5 +1,5 @@
 module TD::Types
-  # Describes type of notifications in the group.
+  # Describes the type of notifications in a notification group.
   class NotificationGroupType < Base
     %w[
       messages

@@ -18,6 +18,8 @@ module TD::Types
       voice_and_video_note
       mention
       unread_mention
+      failed_to_send
+      pinned
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/search_messages_filter/#{type}"
     end

@@ -1,5 +1,5 @@
 module TD::Types
-  # Represents commands supported by a bot.
+  # Represents a command supported by a bot.
   #
   # @attr command [String] Text of the bot command.
   # @attr description [String] Description of the bot command.

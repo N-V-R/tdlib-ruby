@@ -5,6 +5,7 @@ module TD::Types
       url
       login_url
       callback
+      callback_with_password
       callback_game
       switch_inline
       buy

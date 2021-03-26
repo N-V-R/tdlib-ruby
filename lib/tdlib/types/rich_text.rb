@@ -15,7 +15,9 @@ module TD::Types
       marked
       phone_number
       icon
+      reference
       anchor
+      anchor_link
       s
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/rich_text/#{type}"

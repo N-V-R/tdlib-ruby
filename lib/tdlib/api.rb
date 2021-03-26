@@ -61,14 +61,19 @@ module TD::Api
     end
 
     def find_lib
-      file_name = "libtdjson.#{lib_extension}"
-      lib_path =
-        if TD.config.lib_path
-          TD.config.lib_path
-        elsif defined?(Rails) && File.exist?(Rails.root.join('vendor', file_name))
-          Rails.root.join('vendor')
+      full_path =
+        if TD.config.lib_full_path
+          TD.config.lib_full_path
+        else
+          file_name = "libtdjson.#{lib_extension}"
+          lib_path =
+            if TD.config.lib_path
+              TD.config.lib_path
+            elsif defined?(Rails) && File.exist?(Rails.root.join('vendor', file_name))
+              Rails.root.join('vendor')
+            end
+          File.join(lib_path.to_s, file_name)
         end
-      full_path = File.join(lib_path.to_s, file_name)
       ffi_lib full_path
       full_path
     rescue LoadError

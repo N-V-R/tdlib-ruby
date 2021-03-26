@@ -31,6 +31,7 @@ http://rpms.southbridge.ru/rhel6/stable/SRPMS/
 | 2.0           | → | 1.3           |
 | 2.1           | → | 1.5           |
 | 2.2           | → | 1.6           |
+| 2.3           | → | 1.7           |
 
 ## Install
 
@@ -156,7 +157,7 @@ TD::Client.new(database_directory: 'will override value from config',
                files_directory: 'will override value from config')
 ```
 
-If the tdlib schema changes, then `./bin/parse` can be run to
+If the tdlib schema changes, then `./bin/parser` can be run to
 synchronize the Ruby types with the new schema. Please look through
 `lib/tdlib/client_methods.rb` carefully, especially the set_password
 method!

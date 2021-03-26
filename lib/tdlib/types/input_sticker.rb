@@ -1,14 +1,11 @@
 module TD::Types
-  # Describes a sticker that should be added to a sticker set.
-  #
-  # @attr png_sticker [TD::Types::InputFile] PNG image with the sticker; must be up to 512 kB in size and fit in a
-  #   512x512 square.
-  # @attr emojis [String] Emoji corresponding to the sticker.
-  # @attr mask_position [TD::Types::MaskPosition, nil] For masks, position where the mask should be placed; may be
-  #   null.
+  # Describes a sticker that needs to be added to a sticker set.
   class InputSticker < Base
-    attribute :png_sticker, TD::Types::InputFile
-    attribute :emojis, TD::Types::String
-    attribute :mask_position, TD::Types::MaskPosition.optional.default(nil)
+    %w[
+      static
+      animated
+    ].each do |type|
+      autoload TD::Types.camelize(type), "tdlib/types/input_sticker/#{type}"
+    end
   end
 end

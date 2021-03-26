@@ -21,7 +21,8 @@ module TD::Types
   #   https://my.telegram.org.
   # @attr system_language_code [String] IETF language tag of the user's operating system language; must be non-empty.
   # @attr device_model [String] Model of the device the application is being run on; must be non-empty.
-  # @attr system_version [String] Version of the operating system the application is being run on; must be non-empty.
+  # @attr system_version [String, nil] Version of the operating system the application is being run on.
+  #   If empty, the version is automatically detected by TDLib.
   # @attr application_version [String] Application version; must be non-empty.
   # @attr enable_storage_optimizer [Boolean, nil] If set to true, old files will automatically be deleted.
   # @attr ignore_file_names [Boolean, nil] If set to true, original file names will be ignored.
@@ -38,7 +39,7 @@ module TD::Types
     attribute :api_hash, TD::Types::String.optional.default(nil)
     attribute :system_language_code, TD::Types::String
     attribute :device_model, TD::Types::String
-    attribute :system_version, TD::Types::String
+    attribute :system_version, TD::Types::String.optional.default(nil)
     attribute :application_version, TD::Types::String
     attribute :enable_storage_optimizer, TD::Types::Bool.optional.default(nil)
     attribute :ignore_file_names, TD::Types::Bool.optional.default(nil)

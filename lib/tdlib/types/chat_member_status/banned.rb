@@ -5,6 +5,7 @@ module TD::Types
   # @attr banned_until_date [Integer] Point in time (Unix timestamp) when the user will be unbanned; 0 if never.
   #   If the user is banned for more than 366 days or for less than 30 seconds from the current time, the user is
   #   considered to be banned forever.
+  #   Always 0 in basic groups.
   class ChatMemberStatus::Banned < ChatMemberStatus
     attribute :banned_until_date, TD::Types::Integer
   end

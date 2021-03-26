@@ -14,6 +14,7 @@ module TD::Types
       location
       venue
       contact
+      dice
       game
       invoice
       poll

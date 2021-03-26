@@ -12,6 +12,8 @@ module TD
 
   setting :lib_path
 
+  setting :lib_full_path
+
   setting :encryption_key
 
   setting :client do

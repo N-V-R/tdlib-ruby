@@ -8,6 +8,7 @@ module TD::Types
       search
       restricted
       banned
+      mention
       bots
     ].each do |type|
       autoload TD::Types.camelize(type), "tdlib/types/supergroup_members_filter/#{type}"

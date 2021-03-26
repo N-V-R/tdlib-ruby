@@ -1,8 +1,10 @@
 module TD::Types
-  # Contains full information about a user (except the full list of profile photos).
+  # Contains full information about a user.
   #
-  # @attr is_blocked [Boolean] True, if the user is blacklisted by the current user.
+  # @attr photo [TD::Types::ChatPhoto, nil] User profile photo; may be null.
+  # @attr is_blocked [Boolean] True, if the user is blocked by the current user.
   # @attr can_be_called [Boolean] True, if the user can be called.
+  # @attr supports_video_calls [Boolean] True, if a video call can be created with the user.
   # @attr has_private_calls [Boolean] True, if the user can't be called due to their privacy settings.
   # @attr need_phone_number_privacy_exception [Boolean] True, if the current user needs to explicitly allow to share
   #   their phone number with the user when the method addContact is used.
@@ -12,8 +14,10 @@ module TD::Types
   #   member; 0 for the current user.
   # @attr bot_info [TD::Types::BotInfo, nil] If the user is a bot, information about the bot; may be null.
   class UserFullInfo < Base
+    attribute :photo, TD::Types::ChatPhoto.optional.default(nil)
     attribute :is_blocked, TD::Types::Bool
     attribute :can_be_called, TD::Types::Bool
+    attribute :supports_video_calls, TD::Types::Bool
     attribute :has_private_calls, TD::Types::Bool
     attribute :need_phone_number_privacy_exception, TD::Types::Bool
     attribute :bio, TD::Types::String

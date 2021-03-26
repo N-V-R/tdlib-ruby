@@ -5,10 +5,12 @@ module TD::Types
   # @attr chat_id [Integer] If found, identifier of the chat to which the message belongs, 0 otherwise.
   # @attr message [TD::Types::Message, nil] If found, the linked message; may be null.
   # @attr for_album [Boolean] True, if the whole media album to which the message belongs is linked.
+  # @attr for_comment [Boolean] True, if the message is linked as a channel post comment or from a message thread.
   class MessageLinkInfo < Base
     attribute :is_public, TD::Types::Bool
     attribute :chat_id, TD::Types::Integer
     attribute :message, TD::Types::Message.optional.default(nil)
     attribute :for_album, TD::Types::Bool
+    attribute :for_comment, TD::Types::Bool
   end
 end

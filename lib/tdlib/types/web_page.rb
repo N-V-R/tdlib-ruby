@@ -7,7 +7,7 @@ module TD::Types
   #   Can be: article, photo, audio, video, document, profile, app, or something else.
   # @attr site_name [String] Short name of the site (e.g., Google Docs, App Store).
   # @attr title [String] Title of the content.
-  # @attr description [String] Description of the content.
+  # @attr description [TD::Types::FormattedText] Description of the content.
   # @attr photo [TD::Types::Photo, nil] Image representing the content; may be null.
   # @attr embed_url [String] URL to show in the embedded preview.
   # @attr embed_type [String] MIME type of the embedded preview, (e.g., text/html or video/mp4).
@@ -32,7 +32,7 @@ module TD::Types
     attribute :type, TD::Types::String
     attribute :site_name, TD::Types::String
     attribute :title, TD::Types::String
-    attribute :description, TD::Types::String
+    attribute :description, TD::Types::FormattedText
     attribute :photo, TD::Types::Photo.optional.default(nil)
     attribute :embed_url, TD::Types::String
     attribute :embed_type, TD::Types::String

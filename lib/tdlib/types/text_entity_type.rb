@@ -9,6 +9,7 @@ module TD::Types
       url
       email_address
       phone_number
+      bank_card_number
       bold
       italic
       underline

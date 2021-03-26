@@ -2,6 +2,7 @@ module TD::Types
   # Describes a photo.
   #
   # @attr has_stickers [Boolean] True, if stickers were added to the photo.
+  #   The list of corresponding sticker sets can be received using getAttachedStickerSets.
   # @attr minithumbnail [TD::Types::Minithumbnail, nil] Photo minithumbnail; may be null.
   # @attr sizes [Array<TD::Types::PhotoSize>] Available variants of the photo, in different sizes.
   class Photo < Base
