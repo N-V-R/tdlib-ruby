@@ -5,7 +5,7 @@ class TD::UpdateHandler
 
   attr_reader :update_type, :extra
 
-  def initialize(update_type, extra = nil, disposable: false, &action)
+  def initialize(update_type, extra = nil, disposable = false, &action)
     super()
 
     @action = action
